@@ -1,3 +1,4 @@
+import 'package:credisis_demo/TelaSecundaria.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(home: TelaPrincipal()));
@@ -12,7 +13,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Tela P))))rincipal"),
+        title: Text("Tela Principal"),
         backgroundColor: Colors.orange,
       ),
       body: Container(
@@ -20,8 +21,12 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
         child: Column(
           children: <Widget>[
             RaisedButton(
-                onPressed: (){},
-                padding: EdgeInsets.all(15),
+              padding: EdgeInsets.all(14),
+              onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TelaSecundaria()));
+                  },
             ),
           ],
         ),
