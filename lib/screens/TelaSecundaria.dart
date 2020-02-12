@@ -10,8 +10,8 @@ class _TelaSecundariaState extends State<TelaSecundaria> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text("Segunda Tela"),
-        backgroundColor: Colors.green,
+        title: Text("Tela Secundaria"),
+        backgroundColor: Colors.pinkAccent,
       ),
       body: Container(
         padding: EdgeInsets.all(32),
