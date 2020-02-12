@@ -5,14 +5,33 @@ import 'package:flutter/material.dart';
 
      Widget _builderDrawerBack() => Container(
        decoration: BoxDecoration(
-         color: Colors.green[400]
+         color: Theme.of(context).primaryColor,
        ),
      );
 
      return Drawer(
        child: Stack(
          children: <Widget>[
-           _builderDrawerBack()
+           _builderDrawerBack(),
+           ListView(
+             padding: EdgeInsets.only(left: 32.0, top: 10.0),
+             children: <Widget>[
+               Container(
+                 margin: EdgeInsets.fromLTRB(0.0, 16.0, 16.0, 8.0),
+                 height: 170.0,
+                 child: Stack(
+                   children: <Widget>[
+                     Positioned(
+                         top: 8.0,
+                         left: 0.0,
+                         child: Text("Leandro \n 0001 / 9999999-9",
+                           style: TextStyle(fontSize: 34.0, fontWeight: FontWeight.bold),
+                         ))
+                   ],
+                 ),
+               )
+             ],             
+           )
          ],
        ),
      );

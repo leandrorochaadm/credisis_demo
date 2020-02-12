@@ -14,7 +14,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
       drawer: CustomDrawer(),
       appBar: AppBar(
         title: Text("Primeira Tela"),
-        backgroundColor: Colors.green,
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: Container(
         padding: EdgeInsets.all(32),
