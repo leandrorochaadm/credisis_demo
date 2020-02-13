@@ -1,3 +1,4 @@
+import 'package:credisis_demo/tiles/drawer_tile.dart';
 import 'package:flutter/material.dart';
  class CustomDrawer extends StatelessWidget {
    @override
@@ -24,13 +25,37 @@ import 'package:flutter/material.dart';
                      Positioned(
                          top: 8.0,
                          left: 0.0,
-                         child: Text("Leandro \n 0001 / 9999999-9",
-                           style: TextStyle(fontSize: 34.0, fontWeight: FontWeight.bold),
+                         child: Column(
+                           crossAxisAlignment: CrossAxisAlignment.center,
+                           children: <Widget>[
+                             Container(
+                               alignment: Alignment.bottomCenter,
+                               child: Column(
+                                 children: <Widget>[
+                                   Icon(Icons.person_pin, size: 120.0, color: Theme.of(context).secondaryHeaderColor,),
+                                   Text("Leandro \n 0001 / 9999999-9",
+                                     style: TextStyle(
+                                         fontSize: 18.0,
+                                         fontWeight: FontWeight.bold,
+                                         color: Theme.of(context).secondaryHeaderColor),
+                                   ),
+                                 ],
+                               ),
+                             ),
+
+                           ],
                          ))
                    ],
                  ),
-               )
-             ],             
+               ),
+               Divider(),
+               DrawerTile(Icons.all_inclusive, "primeiro"),
+               DrawerTile(Icons.all_inclusive, "primeiro"),
+               DrawerTile(Icons.all_inclusive, "primeiro"),
+               DrawerTile(Icons.all_inclusive, "primeiro"),
+               DrawerTile(Icons.all_inclusive, "primeiro"),
+               DrawerTile(Icons.all_inclusive, "primeiro"),
+             ],
            )
          ],
        ),
