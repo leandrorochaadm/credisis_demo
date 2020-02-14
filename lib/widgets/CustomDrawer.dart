@@ -15,10 +15,10 @@ import 'package:flutter/material.dart';
          children: <Widget>[
            _builderDrawerBack(),
            ListView(
-             padding: EdgeInsets.only(left: 32.0, top: 10.0),
+             padding: EdgeInsets.only(left: 0.0, top: 10.0),
              children: <Widget>[
                Container(
-                 margin: EdgeInsets.fromLTRB(0.0, 16.0, 16.0, 8.0),
+                 margin: EdgeInsets.fromLTRB(0.0, 12.0, 20.0, 8.0),
                  height: 170.0,
                  child: Stack(
                    children: <Widget>[
@@ -49,12 +49,16 @@ import 'package:flutter/material.dart';
                  ),
                ),
                Divider(),
-               DrawerTile(Icons.all_inclusive, "primeiro"),
-               DrawerTile(Icons.all_inclusive, "primeiro"),
-               DrawerTile(Icons.all_inclusive, "primeiro"),
-               DrawerTile(Icons.all_inclusive, "primeiro"),
-               DrawerTile(Icons.all_inclusive, "primeiro"),
-               DrawerTile(Icons.all_inclusive, "primeiro"),
+               DrawerTile(Icons.star, "Acesso rápido"),
+               DrawerTile(Icons.search, "Consulta"),
+               DrawerTile(Icons.attach_money, "Pagamentos"),
+               DrawerTile(Icons.repeat, "Transferências"),
+               DrawerTile(Icons.trending_up, "Aplicações"),
+               DrawerTile(Icons.bookmark, "Débito direto autorizado"),
+               DrawerTile(Icons.build, "serviços"),
+               DrawerTile(Icons.book, "Gestão de Assinatura"),
+               DrawerTile(Icons.person, "Minha conta"),
+               DrawerTile(Icons.help, "Ajuda"),
              ],
            )
          ],
