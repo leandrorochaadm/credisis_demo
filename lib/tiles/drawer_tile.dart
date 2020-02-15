@@ -7,8 +7,6 @@ class DrawerTile extends StatelessWidget {
 
   DrawerTile(this.icon, this.text);
 
-
-
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -16,9 +14,9 @@ class DrawerTile extends StatelessWidget {
       child: InkWell(
         onTap: (){},
         child: Container(
-          height: 60.0,
+          height: 48.0,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+//            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               Icon(
                 icon,
@@ -28,11 +26,16 @@ class DrawerTile extends StatelessWidget {
               SizedBox(
                 width: 32.0,
               ),
-              Text(text,
-              style: TextStyle(
-                fontSize: 16.0,
-                color: Colors.black
-              )),
+              Container(
+                width: 200.0,
+                child: Text(
+                    text,
+                    style: TextStyle(
+                        fontSize: 16.0,
+                        color: Colors.black
+                    )
+                ),
+              ),
               Icon(
                   Icons.arrow_forward_ios,
                   size: 32.0,
