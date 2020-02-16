@@ -8,22 +8,39 @@ class TelaSecundaria extends StatefulWidget {
 class _TelaSecundariaState extends State<TelaSecundaria> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
-        title: Text("Tela Secundaria"),
-        backgroundColor: Colors.pinkAccent,
+        centerTitle: true,
+        title: Image.asset("lib/images/logo2.png"),
+//        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: Container(
-        padding: EdgeInsets.all(32),
+        width: double.infinity,
+//        padding: EdgeInsets.all(32),
+        decoration: BoxDecoration(color: Theme.of(context).primaryColor),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            RaisedButton(
-              onPressed: (){},
-              padding: EdgeInsets.all(15),
+            /*Image.asset(
+              "lib/images/logo2.png",
+//              width: 150.0,
+            ),*/
+            Icon(
+              Icons.report_problem,
+              size: 150.0,
+              color: Theme.of(context).secondaryHeaderColor,
             ),
+            Text(
+              "Em desevolvimento",
+              style: TextStyle(
+                  fontSize: 30.0,
+                  color: Theme.of(context).secondaryHeaderColor),
+            )
           ],
         ),
-      ) ,
+      ),
     );
   }
 }
