@@ -43,38 +43,49 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
       );
     }
 
-    Row _transation(IconData icon, Color color, String description, String date, String value){
+    Row _transation(IconData icon, Color color, String description, String date,
+        String value) {
       return Row(
 //        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.fromLTRB(12.0, 12.0, 12.0, 24.0),
-            child: Container(
-                padding: EdgeInsets.all(5.0),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(color: color)
-                ),
-                child: Icon(icon, size: 30.0, color: color,)),
-          ),
-          Container(
-            width: 170.0,
-            child: Column(
-
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(description),
-                Text(date),
-                Text("R\$ "+value, style: TextStyle(color: Colors.red),),
-              ],
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.fromLTRB(12.0, 12.0, 12.0, 24.0),
+              child: Container(
+                  padding: EdgeInsets.all(5.0),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle, border: Border.all(color: color)),
+                  child: Icon(
+                    icon,
+                    size: 30.0,
+                    color: color,
+                  )),
             ),
-          ),
+            Container(
+              width: 170.0,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(description),
+                  Text(date),
+                  Text(
+                    "R\$ " + value,
+                    style: TextStyle(color: Colors.red),
+                  ),
+                ],
+              ),
+            ),
 //          Padding(
 //            padding: EdgeInsets.only(bottom: 12.0),
 //          )
-        FlatButton(onPressed: (){}, child: Icon(Icons.more_vert))
-        ],
-      );
+            FlatButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => TelaSecundaria()));
+                },
+                child: Icon(Icons.more_vert))
+          ]);
     }
 
     return Scaffold(
@@ -157,10 +168,14 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text("Últimas  transações"),
-                  _transation(Icons.arrow_downward,Color(0xFFF53535),"SAQUE ATM 8845112011","12/02/20","440,00"),
-                  _transation(Icons.call,Color(0xFFFEC006),"RECARGA","13/02/20","25.00"),
-                  _transation(Icons.swap_horiz,Colors.blue,"TRANSFERÊNCIA","14/02/20","4.419,21"),
-                  _transation(Icons.arrow_downward,Colors.red,"SAQUE ATM 51052151","12/02/20","91,00"),
+                  _transation(Icons.arrow_downward, Color(0xFFF53535),
+                      "SAQUE ATM 8845112011", "12/02/20", "440,00"),
+                  _transation(Icons.call, Color(0xFFFEC006), "RECARGA",
+                      "13/02/20", "25.00"),
+                  _transation(Icons.swap_horiz, Colors.blue, "TRANSFERÊNCIA",
+                      "14/02/20", "4.419,21"),
+                  _transation(Icons.arrow_downward, Colors.red,
+                      "SAQUE ATM 51052151", "12/02/20", "91,00"),
 //                  _transation(Icons.arrow_downward,Colors.pinkAccent,"SAQUE","12/02/20","411,01"),
 //                  _transation(Icons.arrow_downward,Colors.pinkAccent,"SAQUE","12/02/20","411,01"),
 //                  _transation(Icons.arrow_downward,Colors.pinkAccent,"SAQUE","12/02/20","411,01"),
