@@ -100,6 +100,21 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
         padding: EdgeInsets.all(10.0),
         child: Column(
           children: <Widget>[
+            Card(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text("Leandro Rocha",
+                    style: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16.0
+                    ),
+                  ),
+                  Icon(Icons.notifications, size: 20.0,)
+                ],
+              ),
+            ),
 //            Text("Clique no menu"),
             Card(
               color: Theme.of(context).secondaryHeaderColor,
