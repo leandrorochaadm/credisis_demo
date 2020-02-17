@@ -8,6 +8,8 @@ class TelaPrincipal extends StatefulWidget {
 }
 
 class _TelaPrincipalState extends State<TelaPrincipal> {
+  _TelaPrincipalState();
+
 //  final _pageController = PageController();
 
   @override
@@ -22,22 +24,58 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
       color: Colors.black,
     );
 
-    final RaisedButton _buttom = RaisedButton(
-      child: Column(
+    RaisedButton _buttom(IconData icon, String label) {
+      return RaisedButton(
+        child: Column(
+          children: <Widget>[
+            Icon(icon, color: Theme.of(context).primaryColor),
+            Text(
+              label,
+              style: TextStyle(color: Theme.of(context).primaryColor),
+            ),
+          ],
+        ),
+        color: Theme.of(context).secondaryHeaderColor,
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => TelaSecundaria()));
+        },
+      );
+    }
+
+    Row _transation(IconData icon, Color color, String description, String date, String value){
+      return Row(
+//        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Icon(Icons.trending_up, color: Theme.of(context).primaryColor),
-          Text(
-            "Aplicações",
-            style: TextStyle(color: Theme.of(context).primaryColor),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(12.0, 12.0, 12.0, 24.0),
+            child: Container(
+                padding: EdgeInsets.all(5.0),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: color)
+                ),
+                child: Icon(icon, size: 30.0, color: color,)),
           ),
+          Container(
+            width: 170.0,
+            child: Column(
+
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(description),
+                Text(date),
+                Text("R\$ "+value, style: TextStyle(color: Colors.red),),
+              ],
+            ),
+          ),
+//          Padding(
+//            padding: EdgeInsets.only(bottom: 12.0),
+//          )
+        FlatButton(onPressed: (){}, child: Icon(Icons.more_vert))
         ],
-      ),
-      color: Theme.of(context).secondaryHeaderColor,
-      onPressed: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaSecundaria()));
-      },
-    );
+      );
+    }
 
     return Scaffold(
       drawer: CustomDrawer(/*_pageController*/),
@@ -100,12 +138,36 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[_buttom, _buttom, _buttom],
+              children: <Widget>[
+                _buttom(Icons.receipt, "Extrato"),
+                _buttom(Icons.swap_horiz, "Transferência"),
+                _buttom(Icons.trending_up, "Aplicações")
+              ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[_buttom, _buttom, _buttom],
+              children: <Widget>[
+                _buttom(Icons.crop_free, "QR-code"),
+                _buttom(Icons.attach_money, "Pagamentos"),
+                _buttom(Icons.call, "Recarga")
+              ],
             ),
+            Card(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text("Últimas  transações"),
+                  _transation(Icons.arrow_downward,Color(0xFFF53535),"SAQUE ATM 8845112011","12/02/20","440,00"),
+                  _transation(Icons.call,Color(0xFFFEC006),"RECARGA","13/02/20","25.00"),
+                  _transation(Icons.swap_horiz,Colors.blue,"TRANSFERÊNCIA","14/02/20","4.419,21"),
+                  _transation(Icons.arrow_downward,Colors.red,"SAQUE ATM 51052151","12/02/20","91,00"),
+//                  _transation(Icons.arrow_downward,Colors.pinkAccent,"SAQUE","12/02/20","411,01"),
+//                  _transation(Icons.arrow_downward,Colors.pinkAccent,"SAQUE","12/02/20","411,01"),
+//                  _transation(Icons.arrow_downward,Colors.pinkAccent,"SAQUE","12/02/20","411,01"),
+//                  _transation()
+                ],
+              ),
+            )
           ],
         ),
       ),
