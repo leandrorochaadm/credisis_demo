@@ -1,8 +1,8 @@
+import 'package:credisis_demo/screens/TelaPrincipal.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
-
- final double _paddingBotton = 12.0;
+  final double _paddingBotton = 12.0;
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,7 @@ class Login extends StatelessWidget {
                         Text(
                           "Lembrar-me",
                           style: TextStyle(
-                            fontSize: 20.0,
+                              fontSize: 20.0,
                               color: Theme.of(context).secondaryHeaderColor),
                         ),
                         Switch(
@@ -106,7 +106,12 @@ class Login extends StatelessWidget {
                         color: Theme.of(context).secondaryHeaderColor,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(32.0)),
-                        onPressed: () {}),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TelaPrincipal()));
+                        }),
                   )
                 ]),
           ),

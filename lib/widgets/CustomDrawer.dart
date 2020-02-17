@@ -4,6 +4,10 @@ import 'package:credisis_demo/tiles/drawer_tile.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {
+
+//  final PageController pageController;
+//  CustomDrawer(/*this.pageController*/);
+
   @override
   Widget build(BuildContext context) {
     Widget _builderDrawerBack() => Container(
