@@ -23,19 +23,32 @@ class _TelaSecundariaState extends State<TelaSecundaria> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            /*Image.asset(
-              "lib/images/logo2.png",
-//              width: 150.0,
-            ),*/
-            Icon(
+            Image.asset(
+              "lib/images/profile.jpg",
+              width: 200.0,
+              height: 200.0,
+            ),
+            /*Icon(
               Icons.report_problem,
               size: 150.0,
               color: Theme.of(context).secondaryHeaderColor,
+            ),*/
+            Text(
+              "Essa tela está em desevolvimento",
+              style: TextStyle(
+                  fontSize: 20.0,
+                  color: Theme.of(context).secondaryHeaderColor),
             ),
             Text(
-              "Em desevolvimento",
+              "Obrigado por clicar",
               style: TextStyle(
-                  fontSize: 30.0,
+                  fontSize: 20.0,
+                  color: Theme.of(context).secondaryHeaderColor),
+            ),
+            Text(
+              "Em breve estará disponível",
+              style: TextStyle(
+                  fontSize: 20.0,
                   color: Theme.of(context).secondaryHeaderColor),
             )
           ],

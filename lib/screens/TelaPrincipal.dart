@@ -110,7 +110,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
       drawer: CustomDrawer(/*_pageController*/),
       appBar: AppBar(
         centerTitle: true,
-        title: Image.asset("lib/images/logo2.png", scale: 0.15),
+        title: Image.asset("lib/images/logo.png", scale: 0.15),
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: Container(
@@ -210,6 +210,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
             ),
 
             Container(
+              margin: EdgeInsets.only(top: 12),
               decoration: _boxDecoration,
               child: Column(
 //                scrollDirection: Axis.vertical,

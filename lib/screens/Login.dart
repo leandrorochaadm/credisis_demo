@@ -16,9 +16,13 @@ class Login extends StatelessWidget {
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Padding(
-                      padding: EdgeInsets.all(0.0),
-                      child: Image.asset("lib/images/logo2.png")),
+                  Container(
+//                    decoration: BoxDecoration(
+//                      color: Colors.red
+//                    ),
+//                      width: 1.0,
+                      height: 100.0,
+                      child: Image.asset("lib/images/logo.png",width: 10.0,)),
                   Padding(
                     padding: EdgeInsets.only(bottom: _paddingBotton),
                     child: TextField(
@@ -61,7 +65,7 @@ class Login extends StatelessWidget {
                     padding: EdgeInsets.only(bottom: _paddingBotton),
                     child: TextField(
                       autofocus: true,
-                      keyboardType: TextInputType.number,
+                      keyboardType: TextInputType.text,
                       style: TextStyle(
                           fontSize: 20.0,
                           color: Theme.of(context).secondaryHeaderColor),
@@ -99,7 +103,7 @@ class Login extends StatelessWidget {
                     padding: EdgeInsets.only(bottom: 16.0),
                     child: RaisedButton(
                         child: Text(
-                          "Acessar",
+                          "Acessar minha conta",
                           style: TextStyle(color: Colors.black, fontSize: 16.0),
                         ),
                         padding: EdgeInsets.fromLTRB(32, 16, 32, 16),

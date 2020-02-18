@@ -1,3 +1,4 @@
+import 'package:credisis_demo/screens/TelaSecundaria.dart';
 import 'package:flutter/material.dart';
 
 class DrawerTile extends StatelessWidget {
@@ -13,7 +14,9 @@ class DrawerTile extends StatelessWidget {
     return Material(
       color: Theme.of(context).secondaryHeaderColor,
       child: InkWell(
-        onTap: (){},
+        onTap: (){
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => TelaSecundaria()));
+        },
         child: Container(
           height: 48.0,
           child: Row(
