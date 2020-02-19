@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart' show canLaunch, launch;
 
 class TelaSecundaria extends StatefulWidget {
   @override
@@ -6,6 +7,16 @@ class TelaSecundaria extends StatefulWidget {
 }
 
 class _TelaSecundariaState extends State<TelaSecundaria> {
+  _launchURL() async {
+    const url =
+        'https://api.whatsapp.com/send?phone=5569984015882&text=Ol%C3%A1';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,12 +39,22 @@ class _TelaSecundariaState extends State<TelaSecundaria> {
               width: 200.0,
               height: 200.0,
             ),
+            RaisedButton(
+                child: Text(
+                  "Fale com o desevolvedor",
+                  style: TextStyle(color: Colors.black, fontSize: 16.0),
+                ),
+                padding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                color: Theme.of(context).secondaryHeaderColor,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
+                onPressed: _launchURL),
             /*Icon(
               Icons.report_problem,
               size: 150.0,
               color: Theme.of(context).secondaryHeaderColor,
             ),*/
-            Text(
+            /*/ Text(
               "Essa tela está em desevolvimento",
               style: TextStyle(
                   fontSize: 20.0,
@@ -50,7 +71,7 @@ class _TelaSecundariaState extends State<TelaSecundaria> {
               style: TextStyle(
                   fontSize: 20.0,
                   color: Theme.of(context).secondaryHeaderColor),
-            )
+            )*/
           ],
         ),
       ),
