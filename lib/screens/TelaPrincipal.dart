@@ -110,7 +110,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
       drawer: CustomDrawer(/*_pageController*/),
       appBar: AppBar(
         centerTitle: true,
-        title: Image.asset("lib/images/logo.png", scale: 0.15),
+        title: Image.asset("lib/images/logo.png", height: 45,),
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: Container(

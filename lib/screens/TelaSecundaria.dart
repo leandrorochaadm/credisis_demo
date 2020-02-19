@@ -20,24 +20,25 @@ class _TelaSecundariaState extends State<TelaSecundaria> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Colors.black87, //Theme.of(context).primaryColor,
       appBar: AppBar(
         centerTitle: true,
-        title: Image.asset("lib/images/logo2.png"),
-//        backgroundColor: Theme.of(context).primaryColor,
+        title: Text("Leandro Rocha"),
+        backgroundColor: Colors.grey[800], //Theme.of(context).primaryColor,
       ),
       body: Container(
         width: double.infinity,
 //        padding: EdgeInsets.all(32),
-        decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+        decoration: BoxDecoration(
+            color: Colors.black), //Theme.of(context).primaryColor),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Image.asset(
               "lib/images/profile.jpg",
-              width: 200.0,
-              height: 200.0,
+              width: 250.0,
+              height: 250.0,
             ),
             RaisedButton(
                 child: Text(
